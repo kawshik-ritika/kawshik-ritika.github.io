@@ -1,0 +1,705 @@
+/* ==========================================================================
+   WEDDING INVITATION CARD
+   Palette: Royal Maroon, Cream/Ivory, Metallic Gold
+   ========================================================================== */
+
+:root {
+  --maroon-dark: #2A040E;
+  --maroon-900: #3D0715;
+  --maroon-800: #580B20;
+  --maroon-700: #740F2B;
+
+  --gold-200: #F9EBC2;
+  --gold-300: #F3DC96;
+  --gold-500: #D4AF37;
+  --gold-600: #B88E23;
+  --gold-700: #8E6B15;
+
+  --cream-50: #FFFDF9;
+  --cream-100: #FAF6ED;
+  --cream-200: #F3EBD9;
+
+  --ink: #3A2A22;
+  --ink-soft: #6B5A4C;
+
+  --grad-gold-foil: linear-gradient(135deg, #C59A3F 0%, #FFF3B0 25%, #D4AF37 50%, #FDF3C0 75%, #A67C1E 100%);
+  --grad-maroon-radial: radial-gradient(circle at 50% 30%, #6A0D28 0%, #3D0715 60%, #22030B 100%);
+  --border-gold: 1px solid rgba(212, 175, 55, 0.4);
+  --shadow-card: 0 16px 36px rgba(42, 4, 14, 0.14), 0 4px 12px rgba(212, 175, 55, 0.1);
+
+  --font-display: 'Cinzel', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+  --font-ui: 'Outfit', system-ui, sans-serif;
+}
+
+html[lang="bn"] {
+  --font-display: 'Tiro Bangla', 'Noto Serif Bengali', serif;
+  --font-script: 'Tiro Bangla', 'Noto Serif Bengali', serif;
+  --font-body: 'Noto Serif Bengali', serif;
+  --font-ui: 'Noto Sans Bengali', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; background: var(--maroon-dark); }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream-100);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+button { font: inherit; cursor: pointer; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+
+#petals {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.gold-text {
+  background: var(--grad-gold-foil);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------------------------------------------------------------- buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-gold {
+  background: var(--grad-gold-foil);
+  color: var(--maroon-900);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: var(--gold-200);
+  border: 1px solid rgba(243, 220, 150, 0.6);
+}
+
+.btn-outline-light:hover { background: rgba(212, 175, 55, 0.12); }
+
+/* --------------------------------------------------------- top controls */
+
+.top-controls {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 20;
+}
+
+.lang-btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(42, 4, 14, 0.75);
+  color: var(--gold-300);
+  border: var(--border-gold);
+  font-family: 'Noto Sans Bengali', 'Outfit', sans-serif;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+}
+
+.lang-btn:hover { background: var(--maroon-800); }
+
+.fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-500);
+  background: var(--maroon-800);
+  color: var(--gold-300);
+  font-size: 1.25rem;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s;
+}
+
+.fab:hover { transform: scale(1.08); }
+
+/* ------------------------------------------------------------------- hero */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 16px 48px;
+  background: var(--grad-maroon-radial);
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 1px);
+  background-size: 26px 26px;
+  pointer-events: none;
+}
+
+.hero-card {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+  padding: 44px 24px 36px;
+  border: 2px solid rgba(212, 175, 55, 0.55);
+  border-radius: 200px 200px 20px 20px;
+  background: rgba(42, 4, 14, 0.55);
+  box-shadow: 0 0 45px rgba(212, 175, 55, 0.18), inset 0 0 0 6px rgba(42, 4, 14, 0.6), inset 0 0 0 7px rgba(212, 175, 55, 0.35);
+  color: var(--gold-200);
+}
+
+.blessing {
+  font-family: 'Noto Serif Bengali', serif;
+  color: var(--gold-300);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  border: 3px solid var(--gold-500);
+  box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.15), 0 0 30px rgba(212, 175, 55, 0.3);
+  background: radial-gradient(circle, #7A1230 0%, #3D0715 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.ornament {
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--gold-500);
+  margin-bottom: 12px;
+}
+
+.hero-sub {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+  opacity: 0.85;
+}
+
+html[lang="bn"] .hero-sub { letter-spacing: 0.02em; font-size: 1rem; }
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 7vw, 3.2rem);
+  line-height: 1.25;
+  margin: 6px 0 4px;
+}
+
+.hero-names {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 7vw, 2.8rem);
+  color: var(--cream-50);
+  line-height: 1.3;
+}
+
+.hero-dates {
+  list-style: none;
+  margin: 18px 0 4px;
+  display: grid;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 0.98rem;
+}
+
+.hero-dates li {
+  padding: 8px 14px;
+  border: var(--border-gold);
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.hero-dates .icon { width: 1.35em; height: 1.35em; vertical-align: -0.3em; color: var(--gold-500); margin-right: 4px; }
+
+.countdown { margin: 22px 0 26px; }
+
+.countdown-label {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--gold-300);
+  margin-bottom: 10px;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.countdown-box {
+  padding: 10px 4px;
+  border-radius: 12px;
+  border: var(--border-gold);
+  background: rgba(42, 4, 14, 0.6);
+}
+
+.countdown-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--gold-300);
+  line-height: 1.2;
+}
+
+html[lang="bn"] .countdown-num { font-family: 'Noto Sans Bengali', sans-serif; }
+
+.countdown-unit {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-200);
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------- sections */
+
+.section {
+  padding: 72px 16px;
+  text-align: center;
+  position: relative;
+}
+
+.section.cream { background: linear-gradient(180deg, var(--cream-50), var(--cream-100)); }
+.section.maroon { background: var(--grad-maroon-radial); color: var(--gold-200); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: var(--maroon-800);
+  line-height: 1.3;
+}
+
+.section.maroon .section-title { color: var(--gold-300); }
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px auto 36px;
+  color: var(--gold-500);
+  font-size: 1.2rem;
+}
+
+.divider span {
+  width: 70px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+}
+
+/* -------------------------------------------------------- invitation card */
+
+.invite-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 44px 28px 40px;
+  background: var(--cream-50);
+  border: 2px solid var(--gold-500);
+  border-radius: 14px;
+  box-shadow: var(--shadow-card), inset 0 0 0 8px var(--cream-50), inset 0 0 0 9px rgba(212, 175, 55, 0.5);
+  position: relative;
+}
+
+.invite-message {
+  font-size: 1.15rem;
+  color: var(--ink);
+  line-height: 1.9;
+  max-width: 520px;
+  margin: 0 auto 30px;
+}
+
+html[lang="bn"] .invite-message { font-size: 1.05rem; line-height: 2; }
+
+.couple { display: grid; gap: 16px; }
+
+.person-label {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-700);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.6);
+  padding-bottom: 2px;
+  margin-bottom: 6px;
+}
+
+.person-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 4.5vw, 1.8rem);
+  color: var(--maroon-800);
+  line-height: 1.35;
+}
+
+html[lang="bn"] .person-name { font-weight: 400; }
+
+.person-parents {
+  margin-top: 6px;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+
+.weds {
+  font-family: var(--font-script);
+  font-size: 1.9rem;
+  color: var(--gold-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.weds::before, .weds::after {
+  content: "";
+  width: 50px;
+  height: 1px;
+  background: var(--gold-500);
+}
+
+.regards {
+  margin-top: 30px;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.signature {
+  font-family: var(--font-script);
+  font-size: 2rem;
+  color: var(--maroon-700);
+}
+
+
+/* ----------------------------------------------------------------- events */
+
+.events {
+  display: grid;
+  gap: 24px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.events.two { max-width: 1040px; }
+
+@media (min-width: 860px) {
+  .events.two { grid-template-columns: 1fr 1fr; }
+}
+
+.event {
+  padding: 32px 22px 24px;
+  border-radius: 18px;
+  border: var(--border-gold);
+  background: rgba(42, 4, 14, 0.55);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.event-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--gold-300);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.event-title {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--gold-300);
+  margin-bottom: 14px;
+}
+
+.event-info {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  text-align: left;
+  max-width: 380px;
+  margin: 0 auto 20px;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  color: var(--cream-100);
+}
+
+.event-info li { display: flex; gap: 12px; align-items: baseline; }
+.event-info i { width: 18px; color: var(--gold-500); text-align: center; flex-shrink: 0; }
+
+.map {
+  border-radius: 12px;
+  overflow: hidden;
+  border: var(--border-gold);
+  aspect-ratio: 16 / 10;
+  background: var(--maroon-900);
+  margin-top: auto;
+}
+
+.map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.event-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.event-actions .btn { flex: 1 1 180px; }
+
+/* ----------------------------------------------------------------- footer */
+
+.footer {
+  padding: 56px 16px 96px;
+  text-align: center;
+  background: var(--maroon-dark);
+  color: var(--gold-200);
+  border-top: var(--border-gold);
+}
+
+.footer-names {
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  color: var(--gold-300);
+}
+
+.footer-note {
+  font-family: var(--font-ui);
+  opacity: 0.8;
+  margin-bottom: 22px;
+}
+
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* ------------------------------------------------------------ share sheet */
+
+.sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(20, 2, 7, 0.6);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 16px;
+}
+
+.sheet-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--cream-50);
+  border-radius: 18px;
+  padding: 22px 18px;
+  border: 2px solid var(--gold-500);
+  animation: sheet-up 0.25s ease-out;
+}
+
+@keyframes sheet-up { from { transform: translateY(30px); opacity: 0; } }
+
+.sheet-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--maroon-800);
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.sheet-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.sheet-options a, .sheet-options button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 4px;
+  border-radius: 12px;
+  border: none;
+  background: var(--cream-200);
+  color: var(--maroon-800);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.sheet-options i { font-size: 1.5rem; }
+.sheet-options .fa-whatsapp { color: #1E9E52; }
+.sheet-options .fa-facebook-messenger, .sheet-options .fa-facebook { color: #1877F2; }
+
+/* ------------------------------------------------------------------ toast */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 86px;
+  transform: translate(-50%, 20px);
+  z-index: 40;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--maroon-900);
+  color: var(--gold-200);
+  border: var(--border-gold);
+  font-family: var(--font-ui);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 420px) {
+  .hero-card { padding: 36px 16px 28px; border-radius: 160px 160px 18px 18px; }
+  .avatar { width: 124px; height: 124px; }
+  .invite-card { padding: 36px 18px 32px; }
+  .countdown-num { font-size: 1.4rem; }
+}
+
+/* ---------------------------------------------------------------- desktop */
+
+@media (min-width: 900px) {
+  .section { padding: 64px 32px; }
+  .divider { margin-bottom: 30px; }
+
+  /* Groom · শুভ পরিণয় · Bride in one row */
+  .invite-card { max-width: 980px; padding: 40px 48px 36px; }
+  .invite-message { max-width: 720px; margin-bottom: 30px; }
+  .couple { grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
+  .weds { flex-direction: column; gap: 8px; font-size: 1.6rem; }
+  .weds::before, .weds::after { width: 1px; height: 36px; background: linear-gradient(transparent, var(--gold-500), transparent); }
+  .regards { margin-top: 24px; }
+
+  .events { max-width: 600px; }
+  .events.two { max-width: 1120px; gap: 28px; }
+  .event { padding: 26px 26px 22px; }
+  .event-icon { width: 64px; height: 64px; margin-bottom: 8px; }
+  .event-title { margin-bottom: 12px; }
+  .event-info { margin-bottom: 18px; }
+  .map { aspect-ratio: 16 / 8; }
+}
+
+/* Laptop screens: keep the whole opening card inside one screen */
+@media (min-width: 600px) and (max-height: 900px) {
+  .hero { padding: 24px 16px; }
+  .hero-card { max-width: 540px; padding: clamp(22px, 4vh, 40px) 28px clamp(20px, 3.5vh, 32px); }
+  .blessing { margin-bottom: 1.4vh; font-size: 0.9rem; }
+  .ornament { font-size: 1.9rem; margin-bottom: 0.8vh; }
+  .avatar { width: clamp(90px, 15vh, 140px); height: clamp(90px, 15vh, 140px); margin-bottom: 1.4vh; }
+  .hero-title { font-size: clamp(1.9rem, 6.2vh, 3rem); margin: 0.4vh 0 0; }
+  .hero-names { font-size: clamp(1.7rem, 5.4vh, 2.6rem); }
+  .hero-dates { margin: 1.8vh 0 0; gap: 6px; font-size: 0.92rem; }
+  .hero-dates li { padding: 6px 14px; }
+  .countdown { margin: 2.2vh 0 2.6vh; }
+  .countdown-label { margin-bottom: 6px; }
+  .countdown-grid { max-width: 340px; }
+  .countdown-box { padding: 6px 4px; }
+  .countdown-num { font-size: clamp(1.25rem, 3.6vh, 1.6rem); }
+  .btn { padding: 10px 20px; }
+}
+
+/* Petals are lighter on big screens so they never cover the text */
+@media (min-width: 900px) {
+  #petals { opacity: 0.6; }
+}
+
+/* ------------------------------------------------ one section per screen */
+
+html { scroll-snap-type: y mandatory; }
+
+.screen {
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  scroll-snap-align: start;
+  /* room at the top for the language button, at the bottom for the share button */
+  padding: 64px 16px 24px;
+}
+
+.screen > .fit {
+  width: 100%;
+  flex-shrink: 0;
+  transform-origin: center center;
+}
+
+.hero.screen .fit { display: flex; justify-content: center; }
+
+.screen .divider { margin-bottom: 24px; }
+
+.footer.screen { padding-bottom: 24px; border-top: none; }
+.footer .ornament { margin-bottom: 4px; }
+
+@media (max-width: 899px) {
+  .screen .invite-card { padding: 30px 20px 26px; }
+  .screen .invite-message { margin-bottom: 20px; }
+  .screen .couple { gap: 10px; }
+  .screen .regards { margin-top: 18px; }
+}
+
+.next-btn { margin-top: 22px; }
+
+.event-info .phone { color: var(--gold-300); text-decoration: none; border-bottom: 1px dashed rgba(243, 220, 150, 0.6); white-space: nowrap; }
+
+.event-icon .icon { width: 66%; height: 66%; }
