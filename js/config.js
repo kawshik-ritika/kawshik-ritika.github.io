@@ -11,16 +11,16 @@ window.INVITE = {
   // Put the file in assets/ and write the path from the site root, e.g. 'assets/couple.png'
   couplePhoto: '',
 
-  shortNames: { bn: 'কৌশিক ও ঋতিকা', en: 'Kawshik & Ritika' },
+  shortNames: { bn: 'কৌশিক ও ঋত্বিকা', en: 'Kawshik & Ritika' },
 
   groom: {
     name:   { bn: 'প্রকৌশলী কৌশিক কুমার পাল', en: 'Engr. Kawshik Kumar Paul' },
     father: { bn: 'স্বর্গীয় শম্ভু নাথ পাল',     en: 'Late Shambhu Nath Paul' },
-    mother: { bn: 'শম্পা রানী পাল',            en: 'Shampa Rani Paul' }
+    mother: { bn: 'শ্যাম্পা রাণী পাল',            en: 'Shampa Rani Paul' }
   },
 
   bride: {
-    name:   { bn: 'ডা. ঋতিকা পাল প্রমি', en: 'Dr. Ritika Paul Prome' },
+    name:   { bn: 'ডা. ঋত্বিকা পাল প্রমি', en: 'Dr. Ritika Paul Prome' },
     father: { bn: 'তনয় কৃষ্ণ পাল',       en: 'Tanoy Krisno Paul' },
     mother: { bn: 'পূর্ণিমা পাল',         en: 'Purnima Paul' }
   },
@@ -36,9 +36,9 @@ window.INVITE = {
       venue:   { bn: 'পলাশপোল, সাতক্ষীরা সদর, সাতক্ষীরা', en: 'Polashpol, Satkhira Sadar, Satkhira' },
       // What Google Maps searches for. Replace with "lat,lng" for an exact pin, e.g. '22.7185,89.0705'
       mapQuery: 'Polashpol, Satkhira Sadar, Satkhira, Bangladesh',
-      // Phone number is a placeholder — replace it (add more entries for more people)
+      // Add more entries for more contact people
       contacts: [
-        { name: { bn: 'শাশ্বত (ঋতিকার ভাই)', en: "Shashwata (Ritika's brother)" }, phone: '+880 1700-000000' }
+        { name: { bn: 'শাশ্বত (ঋত্বিকার ভাই)', en: "Shashwata (Ritika's brother)" }, phone: '01705741467' }
       ]
     },
     reception: {
@@ -49,9 +49,9 @@ window.INVITE = {
       startsAt: '2026-12-13T19:30:00+06:00',
       venue:   { bn: 'উত্তরা কমিউনিটি সেন্টার, উত্তরা, ঢাকা', en: 'Uttara Community Center, Uttara, Dhaka' },
       mapQuery: 'Uttara Community Center, Uttara, Dhaka, Bangladesh',
-      // Phone number is a placeholder — replace it
+
       contacts: [
-        { name: { bn: 'সৌমিক (কৌশিকের ভাই)', en: "Soumik (Kawshik's brother)" }, phone: '+880 1800-000000' }
+        { name: { bn: 'সৌমিক (কৌশিকের ভাই)', en: "Soumik (Kawshik's brother)" }, phone: '01952784081' }
       ]
     }
   },
