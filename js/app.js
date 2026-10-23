@@ -23,11 +23,10 @@
       contact: 'যোগাযোগ',
       next: 'পরবর্তী',
       invited: 'সাদর আমন্ত্রণ',
-      message: occasion => `শ্রী শ্রী প্রজাপতির আশীর্বাদে আমাদের ${occasion} আপনাকে সপরিবারে সাদর আমন্ত্রণ জানাই। আপনার উপস্থিতি ও আশীর্বাদ আমাদের নতুন জীবনের পথচলায় পরম প্রাপ্তি হয়ে থাকবে।`,
       groomLabel: 'বর', brideLabel: 'কনে',
       father: 'পিতা', mother: 'মাতা',
       weds: 'শুভ পরিণয়',
-      regards: 'শুভেচ্ছান্তে',
+      regards: 'বিনীত',
       programme: 'অনুষ্ঠানসূচি',
       venueTitle: 'তারিখ, সময় ও স্থান',
       directions: 'গুগল ম্যাপে দেখুন',
@@ -51,11 +50,10 @@
       contact: 'Contact',
       next: 'Next',
       invited: 'Cordially Invited',
-      message: occasion => `By the blessings of the Almighty, we joyfully invite you and your family to ${occasion}. Your presence and blessings will mean the world to us as we begin our new journey together.`,
       groomLabel: 'Groom', brideLabel: 'Bride',
       father: 'Father', mother: 'Mother',
       weds: 'weds',
-      regards: 'With love',
+      regards: 'With warm regards',
       programme: 'Programme',
       venueTitle: 'Date, Time & Venue',
       directions: 'Open in Google Maps',
@@ -128,6 +126,9 @@
     document.documentElement.lang = lang;
     document.title = `${L(C.shortNames)} | ${L(CARD.title)}`;
 
+    const couple = [person(C.groom, t('groomLabel')), person(C.bride, t('brideLabel'))];
+    if (CARD.brideFirst) couple.reverse();
+
     const avatar = C.couplePhoto
       ? `<div class="avatar"><img src="${ROOT}${C.couplePhoto}" alt="${L(C.shortNames)}"></div>`
       : `<div class="ornament">✿</div>`;
@@ -164,14 +165,12 @@
           <h2 class="section-title">${t('invited')}</h2>
           <div class="divider"><span></span>✿<span></span></div>
           <article class="invite-card">
-            <p class="invite-message">${t('message')(L(CARD.occasion))}</p>
+            <p class="invite-message">${L(CARD.message)}</p>
             <div class="couple">
-              ${person(C.groom, t('groomLabel'))}
-              <div class="weds">${t('weds')}</div>
-              ${person(C.bride, t('brideLabel'))}
+              ${couple.join(`<div class="weds">${t('weds')}</div>`)}
             </div>
             <p class="regards">${t('regards')}</p>
-            <p class="signature">${L(C.shortNames)}</p>
+            <p class="signature">${L(CARD.host)}</p>
           </article>
           <a href="#events" class="btn btn-gold next-btn">${t('viewVenue')} <i class="fa-solid fa-chevron-down"></i></a>
         </div>

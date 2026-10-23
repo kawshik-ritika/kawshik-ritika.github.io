@@ -61,17 +61,33 @@ window.INVITE = {
     'wedding': {
       events: ['wedding'],
       title:    { bn: 'শুভ বিবাহ', en: 'Wedding Invitation' },
-      occasion: { bn: 'শুভ বিবাহ অনুষ্ঠানে', en: 'our wedding ceremony' }
+      // Invitation from Ritika's parents, so the bride is listed first
+      brideFirst: true,
+      message: {
+        bn: 'শ্রী শ্রী প্রজাপতির আশীর্বাদে আমাদের কন্যা কল্যাণীয়া ঋত্বিকার সঙ্গে কল্যাণীয় কৌশিকের শুভ বিবাহ অনুষ্ঠানে আপনাকে সপরিবারে সাদর আমন্ত্রণ জানাই। আপনার উপস্থিতি ও আশীর্বাদ নবদম্পতির নতুন জীবনের পথচলায় পরম প্রাপ্তি হয়ে থাকবে।',
+        en: 'With the blessings of the Almighty, we joyfully invite you and your family to the wedding of our daughter Ritika with Kawshik. Your presence and blessings will mean the world to the couple as they begin their new journey together.'
+      },
+      host: { bn: 'তনয় কৃষ্ণ পাল ও পূর্ণিমা পাল', en: 'Tanoy Krisno Paul & Purnima Paul' }
     },
     'reception': {
       events: ['reception'],
       title:    { bn: 'শুভ বৌভাত', en: 'Reception Invitation' },
-      occasion: { bn: 'শুভ বৌভাত অনুষ্ঠানে', en: 'our Bou Bhat reception' }
+      // Invitation from Kawshik's parents
+      message: {
+        bn: 'শ্রী শ্রী প্রজাপতির আশীর্বাদে আমাদের পুত্র কল্যাণীয় কৌশিকের সঙ্গে কল্যাণীয়া ঋত্বিকার শুভ বিবাহ উপলক্ষে আয়োজিত বৌভাত অনুষ্ঠানে আপনাকে সপরিবারে সাদর আমন্ত্রণ জানাই। আপনার উপস্থিতি ও আশীর্বাদ নবদম্পতির নতুন জীবনের পথচলায় পরম প্রাপ্তি হয়ে থাকবে।',
+        en: 'With the blessings of the Almighty, we joyfully invite you and your family to the Bou Bhat reception celebrating the wedding of our son Kawshik with Ritika. Your presence and blessings will mean the world to the couple as they begin their new journey together.'
+      },
+      host: { bn: 'শ্যাম্পা রাণী পাল ও পরিবারবর্গ', en: 'Shampa Rani Paul & Family' }
     },
     'wedding-reception': {
       events: ['wedding', 'reception'],
       title:    { bn: 'শুভ বিবাহ ও বৌভাত', en: 'Wedding & Reception' },
-      occasion: { bn: 'শুভ বিবাহ ও বৌভাত অনুষ্ঠানে', en: 'our wedding ceremony and Bou Bhat reception' }
+      // Invitation from Kawshik's parents
+      message: {
+        bn: 'শ্রী শ্রী প্রজাপতির আশীর্বাদে আমাদের পুত্র কল্যাণীয় কৌশিকের সঙ্গে কল্যাণীয়া ঋত্বিকার শুভ বিবাহ ও বৌভাত অনুষ্ঠানে আপনাকে সপরিবারে সাদর আমন্ত্রণ জানাই। আপনার উপস্থিতি ও আশীর্বাদ নবদম্পতির নতুন জীবনের পথচলায় পরম প্রাপ্তি হয়ে থাকবে।',
+        en: 'With the blessings of the Almighty, we joyfully invite you and your family to the wedding and Bou Bhat reception of our son Kawshik with Ritika. Your presence and blessings will mean the world to the couple as they begin their new journey together.'
+      },
+      host: { bn: 'শ্যাম্পা রাণী পাল ও পরিবারবর্গ', en: 'Shampa Rani Paul & Family' }
     }
   }
 };
